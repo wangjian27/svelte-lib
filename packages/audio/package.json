@@ -1,0 +1,29 @@
+{
+  "name": "no-framework-audio-player",
+  "version": "0.0.1",
+  "type": "module",
+  "module": "dist/audiocomponent.es.js",
+  "main": "dist/audiocomponent.umd.js",
+  "description": "",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "import": "./dist/audiocomponent.es.js",
+      "require": "./dist/audiocomponent.umd.js"
+    }
+  },
+  "private": true,
+  "author": "wangjian27",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  }
+}

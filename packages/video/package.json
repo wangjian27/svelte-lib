@@ -1,0 +1,42 @@
+{
+  "name": "no-framework-video-player",
+  "version": "0.0.1",
+  "type": "module",
+  "module": "dist/videocomponent.es.js",
+  "main": "dist/videocomponent.umd.js",
+  "description": "A no framework video player.you can use it as long as your program is in javascript environment",
+  "keywords": [
+    "video",
+    "videoPlayer",
+    "video-player",
+    "no-framework-video-player",
+    "vue2-video-player",
+    "vue3-video-player",
+    "react-video-player",
+    "svelte-video-player",
+    "svelte"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/videocomponent.es.js",
+      "require": "./dist/videocomponent.umd.js"
+    }
+  },
+  "private": true,
+  "author": "wangjian27",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "hls.js": "^1.0.10",
+    "throttle-debounce": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  }
+}
