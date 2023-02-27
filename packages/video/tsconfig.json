@@ -17,7 +17,12 @@
     "checkJs": true,
     "isolatedModules": true
   },
-  "include": ["packages/video/src/**/*.d.ts", "packages/video/src/**/*.ts", "packages/video/src/**/*.js", "packages/video/src/**/*.svelte"],
+  "include": [
+    "packages/video/src/**/*.d.ts",
+    "packages/video/src/**/*.ts",
+    "packages/video/src/**/*.js",
+    "packages/video/src/**/*.svelte"
+  ],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import VitePluginStyleInject from 'vite-plugin-style-inject';
@@ -23,6 +24,11 @@ export default defineConfig(({ command, mode }) => {
           rewrite: (path: string) => path.replace('/api/', '/')
         }
       }
+    },
+    test: {
+      include: ['tests/**/*.test.ts'],
+      // globals: true,
+      environment: 'jsdom'
     }
   };
 
@@ -41,7 +47,7 @@ export default defineConfig(({ command, mode }) => {
         // 是否将css也打入到js中
         cssCodeSplit: true,
         lib: {
-          entry: path.resolve(__dirname, 'src/index.ts'),
+          entry: path.resolve(__dirname, 'src//index.ts'),
           name: 'videoPlayer',
           fileName: (format) => `videocomponent.${format}.js`
         },
