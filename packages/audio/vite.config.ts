@@ -41,7 +41,7 @@ export default defineConfig(({ command, mode }) => {
         // 是否将css也打入到js中
         cssCodeSplit: true,
         lib: {
-          entry: path.resolve(__dirname, 'src/lib/index.ts'),
+          entry: path.resolve(__dirname, 'src/index.ts'),
           name: 'audioPlayer',
           fileName: (format) => `audiocomponent.${format}.js`
         },

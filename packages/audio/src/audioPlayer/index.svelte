@@ -12,7 +12,7 @@
     '//i.thsi.cn/webprivate/voicebroadcast/play.png',
     '//i.thsi.cn/webprivate/voicebroadcast/playN.png',
     '//i.thsi.cn/webprivate/voicebroadcast/pause.png',
-    '//i.thsi.cn/webprivate/voicebroadcast/pauseN.png',
+    '//i.thsi.cn/webprivate/voicebroadcast/pauseN.png'
   ];
 
   let showImage: number = 2;
@@ -24,8 +24,7 @@
   let playing: boolean = false;
   let animateId: number;
   let audioData: number[] | { volume: number; increase: boolean }[] = [
-    5, 7, 5, 11, 7, 5, 7, 9, 11, 7, 9, 5, 7, 5, 3, 7, 5, 7, 3, 9, 7, 11, 7, 5,
-    7, 3, 9, 7, 5, 9,
+    5, 7, 5, 11, 7, 5, 7, 9, 11, 7, 9, 5, 7, 5, 3, 7, 5, 7, 3, 9, 7, 11, 7, 5, 7, 3, 9, 7, 5, 9
   ];
   let rectWidth: number = 0;
   let blockWidth: number = 0;
@@ -41,9 +40,9 @@
     // 空白宽度5 频域矩形宽度2
     rectWidth = canvas.width * (2 / (30 * 2 + 29 * 5));
     blockWidth = canvas.width * (5 / (30 * 2 + 29 * 5.05));
-    audioData = audioData.map(item => ({
+    audioData = audioData.map((item) => ({
       volume: item,
-      increase: item <= 7,
+      increase: item <= 7
     }));
     animate(true);
   };
@@ -52,27 +51,17 @@
     audioData.forEach((item, idx: number) => {
       const { volume: height } = item;
       const realHeight: number = canvas.height * (height / 17);
-      const startPointX: number =
-        idx * (rectWidth + blockWidth) + rectWidth / 2 + 1;
+      const startPointX: number = idx * (rectWidth + blockWidth) + rectWidth / 2 + 1;
       const startPointY: number = (canvas.height - realHeight) / 2;
       ctx.beginPath();
       ctx.arc(startPointX, startPointY, rectWidth / 2, 0, Math.PI, true);
-      ctx.arc(
-        startPointX,
-        startPointY + realHeight,
-        rectWidth / 2,
-        -Math.PI,
-        0,
-        true
-      );
+      ctx.arc(startPointX, startPointY + realHeight, rectWidth / 2, -Math.PI, 0, true);
       ctx.fillStyle =
-        window.getCssStyle() === 'black'
-          ? 'rgba(253, 67, 50, .5)'
-          : 'rgba(233, 48, 48, .5)';
+        window.getCssStyle() === 'black' ? 'rgba(253, 67, 50, .5)' : 'rgba(233, 48, 48, .5)';
       ctx.fill();
     });
     if (!isInit) {
-      audioData = audioData.map(item => {
+      audioData = audioData.map((item) => {
         if (item.increase) {
           item.volume += 0.3;
         } else {
@@ -109,21 +98,21 @@
       seq,
       title,
       state: 1,
-      content: formatData,
+      content: formatData
     });
   };
   // 客户端暂停
   const pause = () => {
     window.callNativeHandler('zxVoiceBroadcast', {
       seq,
-      state: 2,
+      state: 2
     });
   };
   // 客户端继续
   const continuePlay = () => {
     window.callNativeHandler('zxVoiceBroadcast', {
       seq,
-      state: 3,
+      state: 3
     });
   };
   // 监听语音客户端的播放与暂停
@@ -133,7 +122,7 @@
         voiceStartTime = +(window.localStorage.getItem(seq) || 0);
       }
       return {
-        targid: `bt_${voiceStartTime}`,
+        targid: `bt_${voiceStartTime}`
       };
     };
     switch (code) {
@@ -192,12 +181,9 @@
       }
     );
     // 安卓监听状态
-    window.registerWebHandler(
-      'zxVoiceBroadcast',
-      (data: { state: string | number }) => {
-        zxCallback(+data.state);
-      }
-    );
+    window.registerWebHandler('zxVoiceBroadcast', (data: { state: string | number }) => {
+      zxCallback(+data.state);
+    });
     // 兼容某些机型tick失效的情况
     setTimeout(() => {
       initCanvas();
@@ -205,7 +191,7 @@
         'zxVoiceBroadcast',
         {
           seq,
-          state: 4,
+          state: 4
         },
         () => {
           // 客户单协议
@@ -228,6 +214,7 @@
   }
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="voice" on:click={handleClickPlay}>
   <div class="container light-bd">
     <div class="voice-btn">

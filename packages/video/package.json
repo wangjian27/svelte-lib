@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "module": "dist/videocomponent.es.js",
-  "main": "dist/videocomponent.umd.js",
+  "main": "dist/videocomponent.es.js",
   "description": "A no framework video player.you can use it as long as your program is in javascript environment",
   "keywords": [
     "video",

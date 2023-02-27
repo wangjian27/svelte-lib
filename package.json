@@ -7,9 +7,11 @@
   "author": "wangjian27",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "preinstall": "npx only-allow pnpm",
+    "build": "pnpm --filter=@qftjs/* run build",
+    "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
+    "changeset": "changeset",
+    "version-packages": "changeset version"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
