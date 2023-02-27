@@ -1,5 +1,5 @@
 {
-  "name": "no-framework-video-player",
+  "name": "@no-framework/videoplayer",
   "version": "0.0.1",
   "type": "module",
   "module": "dist/videocomponent.es.js",

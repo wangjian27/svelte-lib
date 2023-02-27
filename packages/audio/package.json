@@ -1,5 +1,5 @@
 {
-  "name": "no-framework-audio-player",
+  "name": "@no-framework/audioplayer",
   "version": "0.0.1",
   "type": "module",
   "module": "dist/audiocomponent.es.js",
