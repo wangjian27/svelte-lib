@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "module": "dist/audiocomponent.es.js",
-  "main": "dist/audiocomponent.umd.js",
+  "main": "dist/audiocomponent.es.js",
   "description": "",
   "keywords": [],
   "exports": {
@@ -12,7 +12,7 @@
       "require": "./dist/audiocomponent.umd.js"
     }
   },
-  "private": true,
+  "private": false,
   "author": "wangjian27",
   "scripts": {
     "dev": "vite",

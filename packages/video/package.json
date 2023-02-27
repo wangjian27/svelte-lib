@@ -1,6 +1,6 @@
 {
   "name": "@no-framework/videoplayer",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "module": "dist/videocomponent.es.js",
   "main": "dist/videocomponent.es.js",
@@ -22,7 +22,7 @@
       "require": "./dist/videocomponent.umd.js"
     }
   },
-  "private": true,
+  "private": false,
   "author": "wangjian27",
   "scripts": {
     "dev": "vite",
